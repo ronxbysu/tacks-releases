@@ -1,0 +1,15 @@
+{
+  "releases": [
+    {
+      "tag": "v0.1.0",
+      "name": "Tacks 0.1.0: bots",
+      "published": "2026-09-29T09:19:43Z",
+      "latest": true,
+      "prerelease": false,
+      "notes": "The v1 bot-only prototype: every non-human slot is filled with a bot that plays by the same rules as you.\n\n## What's in it\n\n- **Free-for-all and Team Deathmatch**, chosen with the Mode export on the main scene. In Team Deathmatch you play on Staff with two bot teammates against three Customers.\n- **Bots scavenge like you do.** They spawn empty-handed, head for a Shelf drawn by weight (Nail Gun 3, Paint Sprayer 2, Hammer 1), fall back to a nearby Dropped Tool or the next Shelf when one is bare, and pick up opportunistically with a free Hand.\n- **Bots fight on line of sight.** Armed bots roam, engage the nearest enemy they can see, use their Tool within its range, and drop the fight the moment you break sight. An empty Nail Gun or Paint Sprayer keeps swinging as weak melee.\n- **Easy, Normal and Hard** change only aim and reaction: 12\u00b0/0.8 s, 6\u00b0/0.45 s, 2\u00b0/0.2 s.\n- **Blinded bots** hit by your Paint Sprayer fire wildly at where they last saw you for two seconds, with double the aim error.\n- **Team colours and Tool markers** on bot bodies, alive counts per Team on the HUD, and Rounds that start on their own after a 3 s pause.\n- **A use cooldown per Hand** for everyone: Hammer 0.6 s, Nail Gun 0.15 s, Paint Sprayer 0.5 s, empty melee 0.8 s.\n\n## Gameplay\n\n`tacks-0.1.0-ffa-gameplay.mp4` below: two minutes of Free-for-all on Normal against five bots, recorded in-engine.\n\n## Run it\n\nOpen the project in Godot 4.6 and run the main scene. Change Mode and Difficulty on the Main node in the inspector.\n\n## Known playtest risks\n\n- Bots can gather at spawn points, because roam points include them.\n- The store has no Departments yet; roam points stand in with the Team Spawn Zone centres.\n\nTickets #2\u2013#9 of spec #1. Full diff: PR #18.\n",
+      "videos": [
+        "media/v0.1.0/tacks-0.1.0-ffa-gameplay.mp4"
+      ]
+    }
+  ]
+}
