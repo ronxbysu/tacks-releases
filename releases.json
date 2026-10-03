@@ -1,6 +1,17 @@
 {
   "releases": [
     {
+      "tag": "v0.2.0",
+      "name": "Tacks 0.2.0: art pass (preview)",
+      "published": "2026-10-03T16:47:22Z",
+      "latest": false,
+      "prerelease": true,
+      "notes": "The v2 art pass: the same rules as 0.1.0, now in a DIY store overrun by two robot factions. A preview of `release-0.2.0`, before it merges to `main` (PR #40).\n\n## What's in it\n\n- **A start menu.** Pick Mode and Difficulty, press Start, and get back to the menu when the Match ends. A Credits screen lists every third-party asset.\n- **Two robot factions.** Staff players are a bronze, horned mech and Customers a grey armoured robot. In Free-for-all everyone is a Customer robot. Their glowing lights and eyes show the Team colour (orange or purple), or a different colour for each player in Free-for-all. They idle, run, swing, shoot, flinch when Blinded and fall when Ejected (animations from Quaternius' Universal Animation Library).\n- **True first person.** You see your own robot's right arm holding the active Tool, or an open hand when that Hand is empty. Everyone else sees your whole robot.\n- **Tool models everywhere.** There's a Kenney Hammer, plus a Nail Gun and a Paint Sprayer made for Tacks in Blender. Each one shows in hand, on its Shelf and on the floor. A Dropped Tool turns slowly with an outline in the Tool's colour.\n- **A store that looks like a store.** Kenney shelving and textured floors and walls replace the greybox. Each Shelf shows one Tool per unit of stock, so a bare Shelf looks bare from across the aisle and a Restock visibly refills it.\n- **Effects.** Nail tracers, paint mist and hit puffs, and a paint splat over your screen while you're Blinded.\n\n## Gameplay\n\n`tacks-0.2.0-ffa-gameplay.mp4` below: about two minutes of Free-for-all on Easy against five bots, recorded in-engine.\n\n## Run it\n\nOpen the project in Godot 4.6 and press Play. The game opens on the start menu.\n\n## Known rough edges\n\n- The robots are lit very dark under the store lighting.\n- The robots' joints are rigid, so a small gap can open in the armour when a limb moves.\n- In first person, swings play at half strength, and your hidden body still casts a shadow. Other players see your right arm raised and following your aim.\n- The held Hammer looks large up close, and in idle its head grazes the robot's thigh.\n- Tracers and paint mist start beside the head, not at the held Tool's muzzle. A cleanup ticket from the PR #40 review will fix this.\n\nTickets #21\u2013#30 of spec #20. Full diff: PR #40.\n",
+      "videos": [
+        "media/v0.2.0/tacks-0.2.0-ffa-gameplay.mp4"
+      ]
+    },
+    {
       "tag": "v0.1.0",
       "name": "Tacks 0.1.0: bots",
       "published": "2026-09-29T09:19:43Z",
