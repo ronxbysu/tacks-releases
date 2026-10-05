@@ -2,7 +2,7 @@
   "releases": [
     {
       "tag": "v0.2.1",
-      "name": "Tacks 0.2.1: hit locations",
+      "name": "Tacks 0.2.1: hit locations (latest)",
       "published": "2026-10-05T13:01:10Z",
       "latest": true,
       "prerelease": false,
@@ -13,7 +13,7 @@
     },
     {
       "tag": "v0.2.0",
-      "name": "Tacks 0.2.0: art pass (latest)",
+      "name": "Tacks 0.2.0: art pass",
       "published": "2026-10-03T16:47:22Z",
       "latest": false,
       "prerelease": false,
