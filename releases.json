@@ -1,10 +1,19 @@
 {
   "releases": [
     {
+      "tag": "v0.2.3",
+      "name": "Tacks 0.2.3: Squat on C",
+      "published": "2026-10-08T08:53:48Z",
+      "latest": true,
+      "prerelease": false,
+      "notes": "A one-fix release: Squatting no longer stops you from using your Tools on macOS.\n\n## What's in it\n\n- **Squat moves to C.** Hold **C** to Squat, release to stand, on every platform. In 0.2.2 the Squat was on **Ctrl**, and on macOS a left click made while Ctrl is held arrives as a right click, so a Squatting player could not swing, shoot or spray. Everything else about the Squat is unchanged: you still drop under standing-height attacks, move at half speed, and can use Tools, swap Hands and pick things up.\n\n## Run it\n\nOpen the project in Godot 4.7 and press Play. The game opens on the start menu.\n\n## Known rough edges\n\n- Everything listed for 0.2.2 still applies.\n- Two tests fail in the suite: the Squat animation clip check, and one flaky hit-direction test. Both predate this fix.\n\nFull diff: PR #134.",
+      "videos": []
+    },
+    {
       "tag": "v0.2.2",
       "name": "Tacks 0.2.2: oil, Squat and sharper bots",
       "published": "2026-10-07T11:33:18Z",
-      "latest": true,
+      "latest": false,
       "prerelease": false,
       "notes": "Oil, Squat and sharper bots: hits now show where they land, you can duck under a swing, and bots move like people.\n\n## What's in it\n\n- **Oil.** Robots leak yellow oil, never blood. A damaging hit bursts oil from the Hit Zone it struck, bigger for harder hits: a nail to a Leg is a small spurt, a Hammer to the Head a big one. It leaves an Oil Stain on that zone (never the Head, so face paint stays readable) and an Oil Puddle on the floor. Paint makes no oil.\n- **Squat.** Hold **Ctrl** to Squat, release to stand. Your whole body drops under the height a standing attacker aims at, and your view drops with it. You move at half speed and can still use Tools, swap Hands and pick things up. **Space** from a Squat stands you first.\n- **Slower backwards.** Walking backwards runs at 0.6 of forward speed and strafing at 0.8, for players and bots alike.\n- **Bots face where they walk.** No more bots running backwards across the store. A bot that loses sight of you keeps watching where you were for 5 s while it backs away, and turns toward a Tool it hears within 15 m.\n- **Bots attack at your height.** A bot's swing and aim now pitch toward its target, so you see the attack coming where it lands.\n- **Bots Squat and jump.** A bot Squats when you face it with a Hammer in reach, and now and then at random in a fight. It re-aims at a Squatting target after its reaction time. It hops to look over a Shelf for an enemy it just lost behind one.\n\n## Gameplay\n\nA gameplay video will be added to this release.\n\n## Run it\n\nOpen the project in Godot 4.7 and press Play. The game opens on the start menu.\n\n## Known rough edges\n\n- A Squat dodges a standing-height Hammer swing from about 1.5 m, but not from 1 m, and bots often close to that distance.\n- A bot's hop over a Shelf only regains sight of an enemy about 8 m past it.\n- Bots also react to their teammates' Tool use.\n- In melee, bots Squat often; the timings still need tuning.\n\nSpec #111, tickets #112\u2013#121. Full diff: PR #133.\n",
       "videos": []
