@@ -1,10 +1,19 @@
 {
   "releases": [
     {
+      "tag": "v0.3.0",
+      "name": "Tacks 0.3.0: one clock, input commands, GameState owns the Match",
+      "published": "2026-10-09T16:19:08Z",
+      "latest": true,
+      "prerelease": false,
+      "notes": "The groundwork for online play: the game plays exactly as 0.2.3 did, but everything in a Match now runs on one clock, from one kind of command, inside one authority that can save and restore itself.\n\n## What's in it\n\n- **One clock.** A Match advances in fixed Ticks of 1/60 s, counted from 0. Every timer (Blind, Respawn, Restock, the Round pause, Tool cooldowns, bot decisions) counts Ticks, so the game runs at the same speed whatever your frame rate. Bodies are drawn smoothly between Ticks on fast screens.\n- **Input commands.** Each Tick, every player, you and the bots alike, sends one command: where to walk, where to look, Squat held, and the buttons pressed. Nothing else changes play, which is what a networked Host will receive from remote players.\n- **The game state owns the Match.** Movement, jumps, Squat, where you look, every hit and every pickup are worked out in the game state each Tick, not by the bodies on screen. It also places spawns, keeps what each bot has seen and heard, and owns all randomness, seeded per Match.\n- **Save and restore.** A Match can be written to a Snapshot (about 17 KB mid-Match) and restored from one; given the same commands it carries on as if it had never stopped. 0.3.1 will send these over the network, and 0.3.3 will use them to hand a Match to a new Host.\n- **Fixes on the way.** Hits from a fresh teleport or a just-drawn pose no longer land on a stale Hit Zone, which also cured the tests that failed at random. Bot pickups now respect the same reach as yours.\n\n## Gameplay\n\nNo rule changed, so it looks and plays like 0.2.3. A gameplay video may follow.\n\n## Run it\n\nOpen the project in Godot 4.7 and press Play. The game opens on the start menu. Squat is on **C**.\n\n## Known rough edges\n\n- Hit Zones follow robots animated on screen frames, so a hit right on the edge of a pose can differ between two runs of the same Match. Harmless while one Host decides every hit, but a Match can't be replayed exactly from its commands.\n- Below about 7.5 frames a second the Match slows down (Godot runs at most 8 Ticks per frame).\n- A shot aimed at a Squatting robot's body centre tends to hit its Head; probably right for a downward shot, still to be checked by eye.\n- One Squat animation test still fails (#131), as in 0.2.3.\n\nSpec #135, tickets #136\u2013#141 (PRs #142\u2013#147). Design: `docs/design/v3.md`, ADR 0004. Full diff: PR #148.\n",
+      "videos": []
+    },
+    {
       "tag": "v0.2.3",
       "name": "Tacks 0.2.3: Squat on C",
       "published": "2026-10-08T08:53:48Z",
-      "latest": true,
+      "latest": false,
       "prerelease": false,
       "notes": "A one-fix release: Squatting no longer stops you from using your Tools on macOS.\n\n## What's in it\n\n- **Squat moves to C.** Hold **C** to Squat, release to stand, on every platform. In 0.2.2 the Squat was on **Ctrl**, and on macOS a left click made while Ctrl is held arrives as a right click, so a Squatting player could not swing, shoot or spray. Everything else about the Squat is unchanged: you still drop under standing-height attacks, move at half speed, and can use Tools, swap Hands and pick things up.\n\n## Run it\n\nOpen the project in Godot 4.7 and press Play. The game opens on the start menu.\n\n## Known rough edges\n\n- Everything listed for 0.2.2 still applies.\n- Two tests fail in the suite: the Squat animation clip check, and one flaky hit-direction test. Both predate this fix.\n\nFull diff: PR #134.",
       "videos": []
